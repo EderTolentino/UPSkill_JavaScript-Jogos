@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(188, 248, 228);
+    justify-content: center;
+}
+
+main {
+    max-width: 100%;
+}
+
+.memory-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    position: relative;
+}
+
+.carta-facil,.carta-medio {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.carta-dificil {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.carta-facil:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.carta-medio:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+.carta-dificil:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(92, 187, 182);
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.carta-facil.flip {
+    transform: rotateY(180deg);
+}
+.carta-medio.flip {
+    transform: rotateY(180deg);
+}
+.carta-dificil.flip {
+    transform: rotateY(180deg);
+}
+/* Estilos Éder */
+
+.center {
+    margin: auto;
+    flex-direction: column;
+}
+/*
+img {
+    width: 100%;
+    max-width: 120px;
+}
+ */
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* Alinha horizontalmente */
+    justify-content: space-between;
+    /* Alinha verticalmente */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.left {
+    width: 40%;
+    text-align: left;
+}
+
+.right {
+    width: 30%;
+    text-align: right;
+}
+
+#container_end {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#endgame {
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    flex-direction: column;
+
+}
+
+#centra_menu    {
+    justify-content: center;
+}

@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(188, 248, 228);
+}
+
+/* Menu */        
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;            
+}
+
+h2 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container h3 {
+    margin-bottom: 3%;
+}
+
+.container input {
+    margin: 2% auto;
+}
+
+.container button {
+    margin-top: 2%;
+}
+
+#box {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box_information {
+    width: 60%;
+}
+
+#line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.left, .round, .right {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.top, .bottom {
+    text-align: center;
+}
+
+#roundValue {
+    text-align: center;
+}
+
+#game {
+    width: 420px;
+    height: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: auto;
+}
+
+.row {        
+    width: 100%;
+}
+
+.cell {
+    width:  140px;
+    height: 140px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: flex;     
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+
+#container_end {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#endGame {
+    width: 30%;
+    height: 20%;
+    border: 1px solid black;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+#endGame h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+#endGame {
+    background-color: white;
+    opacity: 1;
+}
+
+#restart {
+    width: 90%;
+    border-radius: 5px;            
+}      
+
+#restart a {
+    text-decoration: none;
+    color: white;
+}
+
+.blue {
+    background-color: deepskyblue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.playing {
+    border: 1px solid red;
+}

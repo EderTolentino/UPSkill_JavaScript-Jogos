@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quatro em linha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="css/quatro.css" rel="stylesheet">
+</head>
+<body>    
+    <div class="container">   
+        <h2>Quatro em Linha</h2>
+        <h3>Quem está a jogar?</h3>
+        <div class="col-4 center">
+            <div class="list-group text-center">
+                <input type="text" required minlength="3" class="form-control" id="player1" placeholder="Jogador 1"> 
+                <h3>vs</h3>
+                <input type="text" required minlength="3" class="form-control" id="player2" placeholder="Jogador 2">
+                <button type="button" class="btn btn-primary" id="start_game" >Começar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="box" style="display: none">        
+        <div id="box_information">   
+            <h2>Quatro em Linha</h2>
+            <div class="text-center" id="clocker">
+                <p>
+                    <span class="minutes" id="minutes">00</span>:<span class="seconds" id="seconds">00</span>
+                </p>
+            </div>
+            <div id="players">
+                <div id="playing1">
+                    <div id="simbol1"></div>
+                    <h6 id="player1_name"></h6>
+                </div>
+                <div id="playing2">
+                    <div id="simbol2"></div>
+                    <h6 id="player2_name"></h6>
+                </div>
+            </div>
+        </div>
+        
+        <div id="game">       
+            <div class="column" id="col-0" onclick="fillColumn(0)">
+                <div id="p-0_0"></div>
+                <div id="p-1_0"></div>
+                <div id="p-2_0"></div>
+                <div id="p-3_0"></div>
+                <div id="p-4_0"></div>
+                <div id="p-5_0"></div>
+            </div>
+            <div class="column" id="col-1" onclick="fillColumn(1)">
+                <div id="p-0_1"></div>
+                <div id="p-1_1"></div>
+                <div id="p-2_1"></div>
+                <div id="p-3_1"></div>
+                <div id="p-4_1"></div>
+                <div id="p-5_1"></div>
+            </div>
+            <div class="column" id="col-2" onclick="fillColumn(2)">
+                <div id="p-0_2"></div>
+                <div id="p-1_2"></div>
+                <div id="p-2_2"></div>
+                <div id="p-3_2"></div>
+                <div id="p-4_2"></div>
+                <div id="p-5_2"></div>
+            </div>
+            <div class="column" id="col-3" onclick="fillColumn(3)">
+                <div id="p-0_3"></div>
+                <div id="p-1_3"></div>
+                <div id="p-2_3"></div>
+                <div id="p-3_3"></div>
+                <div id="p-4_3"></div>
+                <div id="p-5_3"></div>
+            </div>
+            <div class="column" id="col-4" onclick="fillColumn(4)">
+                <div id="p-0_4"></div>
+                <div id="p-1_4"></div>
+                <div id="p-2_4"></div>
+                <div id="p-3_4"></div>
+                <div id="p-4_4"></div>
+                <div id="p-5_4"></div>
+            </div>
+            <div class="column" id="col-5" onclick="fillColumn(5)">
+                <div id="p-0_5"></div>
+                <div id="p-1_5"></div>
+                <div id="p-2_5"></div>
+                <div id="p-3_5"></div>
+                <div id="p-4_5"></div>
+                <div id="p-5_5"></div>
+            </div>
+            <div class="column" id="col-6" onclick="fillColumn(6)">
+                <div id="p-0_6"></div>
+                <div id="p-1_6"></div>
+                <div id="p-2_6"></div>
+                <div id="p-3_6"></div>
+                <div id="p-4_6"></div>
+                <div id="p-5_6"></div>
+            </div>
+        </div>
+    </div>    
+    
+    <div id="container_end" style="display: none">
+        <div id="endGame">
+            <h3 id="message">PARABÉNS</h3>
+            <a href="index.html" class="btn btn-primary" id="restart">MENU</a>
+        </div>
+    </div>
+</body> 
+<script src="js/quatro.js"></script>
+</html>

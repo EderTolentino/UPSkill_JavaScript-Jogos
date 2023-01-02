@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/memoria.css">
+    <title>Jogo da memória</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1 class="text-center">Jogo da Memória</h1>
+    </div>
+    <div class="text-center" id="cronometro" style="display: none">
+        <p>
+            <span class="minutos">00</span>:<span class="segundos">00</span>
+        </p>
+    </div>
+    <div id="menu">
+        <div class="container">
+            <h4 class="text-center">Quem está a jogar?</h4>
+        </div>
+        <form class="p-3">  <!-- padding interno de 3  !-->
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" required id="nome" class="form-control mb-1">
+        </form>
+        <div class="container">
+            <h4 class="text-center">Escolher a Grelha</h4>
+        </div>
+        <div>
+            <div class="content" id="facil">
+                <div class="left">Fácil</div>
+                <div class="right">3 x 4</div>
+            </div>
+            <div class="content" id="medio">
+                <div class="left">Médio</div>
+                <div class="right">4 x 4</div>
+            </div>
+            <div class="content" id="dificil">
+                <div class="left">Difícil</div>
+                <div class="right">4 x 5</div>
+            </div>
+        </div>
+    </div>
+    <!-- Jogo de Memória Nível Fácil -->
+    <div class="memory-game" id="jogo-facil" style="display: none">
+        <div class="carta-facil" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-facil" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+    </div>
+    <!-- Jogo de Memória Nível Médio (Tem mais o Cão e o Gato)-->
+    <div class="memory-game" id="jogo-medio" style="display: none">
+        <div class="carta-medio" data-card="cão">
+            <img src="./img/Cão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="gato">
+            <img src="./img/Gato.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="cão">
+            <img src="./img/Cão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="gato">
+            <img src="./img/Gato.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-medio" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+    </div>
+    <!-- Jogo de Memória Nível Difícil (Tem mais o Cão, o Gato e os esquilos (um virado à esquerda e outro à direita)-->
+    <div class="memory-game" id="jogo-dificil" style="display: none">
+        <div class="carta-dificil" data-card="Esquilo_esquerda">
+            <img src="./img/Esquilo_virado_esquerda.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="Esquilo_direita">
+            <img src="./img/Esquilo_virado_direita.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="cão">
+            <img src="./img/Cão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="gato">
+            <img src="./img/Gato.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="Esquilo_esquerda">
+            <img src="./img/Esquilo_virado_esquerda.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="Esquilo_direita">
+            <img src="./img/Esquilo_virado_direita.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="cão">
+            <img src="./img/Cão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="gato">
+            <img src="./img/Gato.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="cavalo">
+            <img src="./img/Cavalo.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="chapeu_magico">
+            <img src="./img/Chapeu_Mágico.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="foguetão">
+            <img src="./img/Foguetão.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="guitarra">
+            <img src="./img/Guitarra.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="meia_laranja">
+            <img src="./img/Meia_laranja.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+        <div class="carta-dificil" data-card="morcego">
+            <img src="./img/Morcego.jpg" alt="Face da carta" class="card-front">
+            <img src="./img/PeçaViradaBaixo.jpg" alt="Verso da carta" class="card-back">
+        </div>
+    </div>
+</main>
+<div id="container_end" style="display: none">
+    <div class="content" id="endgame">
+        <h3 class="text-center">Parabéns!</h3>
+        <button class="content" id="centra_menu"><a href="index.html">MENU</a></button>
+    </div>
+</div>
+</div>
+<div style="display: none">
+    <audio id="audio_virar" src="./img/Card-flip-sound-effect.mp3"></audio>
+    <audio id="audio_certo" src="./img/feedback-correct-3.wav-sound-effect-55313111.mp3"></audio>
+    <audio id="audio_erro" src="./img/free-sound-effects-DONKEY.mp3"></audio>
+    <audio id="audio_fim" src="./img/mixkit-ending-show-audience-clapping-478.wav"></audio>
+</div>
+<script src="js/memoria.js"></script>
+</body>
+</html>

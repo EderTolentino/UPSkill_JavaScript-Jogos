@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo do Galo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="css/galo.css" rel="stylesheet">
+</head>
+<body>    
+    <div class="container" id="menu_quatro">   
+        <h2>Jogo do Galo</h2>
+        <h3>Quem está a jogar?</h3>
+        <div class="col-4 center">
+            <div class="list-group text-center">
+                <input type="text" required minlength="3" class="form-control" id="player1" placeholder="Jogador 1"> 
+                <h3>vs</h3>
+                <input type="text" required minlength="3" class="form-control" id="player2" placeholder="Jogador 2">
+                <button type="button" class="btn btn-primary" id="start_game" >Começar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="box" >        
+        <div id="box_information">   
+            <h2>Jogo do Galo</h2>
+            <div class="text-center" id="clocker">
+                <p>
+                    <span class="minutes" id="minutes">00</span>:<span class="seconds" id="seconds">00</span>
+                </p>
+            </div>
+            
+            <div id="line">
+                <div class="left" id="playing1">
+                    <div class="top">
+                        <span>X - </span>
+                        <span id="player1_name"></span>
+                    </div>
+                    <div class="bottom" id="victory1">0</div>
+                </div>
+                <div class="round">
+                    <h5>Ronda</h5>
+                    <h6 id="roundValue">0/5</h6>
+                </div>
+                <div class="right" id="playing2">
+                    <div class="top">
+                        <span>O - </span>
+                        <span id="player2_name"></span>
+                    </div>
+                    <div class="bottom" id="victory2">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="game">       
+            <div class="cell" id="p1" onclick="fillCell(1)"></div>
+            <div class="cell" id="p2" onclick="fillCell(2)"></div>
+            <div class="cell" id="p3" onclick="fillCell(3)"></div>
+            <div class="cell" id="p4" onclick="fillCell(4)"></div>
+            <div class="cell" id="p5" onclick="fillCell(5)"></div>
+            <div class="cell" id="p6" onclick="fillCell(6)"></div>
+            <div class="cell" id="p7" onclick="fillCell(7)"></div>
+            <div class="cell" id="p8" onclick="fillCell(8)"></div>
+            <div class="cell" id="p9" onclick="fillCell(9)"></div>
+        </div>
+    </div>    
+    
+    <div id="container_end" style="display: none">
+        <div id="endGame">
+            <h3 id="message">PARABÉNS</h3>
+            <button class="btn btn-primary" id="restart" ><a href="index.html">MENU</a></button>
+        </div>
+    </div>   
+</body> 
+<script src="js/galo.js"></script>
+</html>

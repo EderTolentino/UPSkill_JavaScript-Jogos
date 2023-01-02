@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: rgb(188, 248, 228);
+    max-height: 100vh;
+}
+
+/* Menu */        
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;            
+}
+
+h2 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container h3 {
+    margin-bottom: 3%;
+}
+
+.container input {
+    margin: 2% auto;
+}
+
+.container button {
+    margin-top: 2%;
+}
+
+#box {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box_information {
+    height: 20%;
+    width: 60%;
+}
+
+#players {            
+    display: flex;
+    justify-content: space-between;
+}
+
+#playing1, #playing2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 16px;
+    width: 15%;
+    height: 50px;
+}
+
+#simbol1, #simbol2 {            
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+#simbol1 {
+    background-color: yellow;
+}
+
+#simbol2 {
+    background-color: blue;
+}
+
+
+/* Game */        
+#game {
+    display: flex;
+    background-color: gray;
+    height: 280px;
+    width: 420px;
+    margin: 20px auto;
+    border-radius: 16px;                   
+}
+
+.column {
+    flex-direction: column;
+}
+
+#col-0 {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;            
+}
+
+#col-6 {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;            
+}
+
+.column:hover {
+    background-color: lightgray;
+}
+
+.column div {
+    border: 1px solid white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 15px;
+}
+
+#container_end {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#endGame {
+    width: 30%;
+    height: 20%;
+    border: 1px solid black;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+#endGame h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+#endGame {
+    background-color: white;
+    opacity: 1;
+}
+
+#restart {
+    width: 90%;
+    border-radius: 5px;            
+}      
+
+#restart a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.column .blue {
+    background-color: blue;
+}
+
+.column .yellow {
+    background-color: yellow;
+}
+
+.playing {
+    border: 1px solid red;
+}
